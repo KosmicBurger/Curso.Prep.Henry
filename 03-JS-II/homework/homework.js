@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { EMPTY_COMMANDS } = require("simple-git/src/lib/tasks/task");
+
 function obtenerMayor(x, y) {
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
@@ -169,7 +171,7 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if(num1>num2&&num1>num3&&num1>0){
+  if(num1>num2 && num1>num3 && num1>0){
     return 'Número 1 es mayor y positivo';
   }
   else if(num1<0||num2<0||num3<0){
@@ -221,26 +223,55 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  if(valor===true){
+    return 'Soy verdadero';
+  }
+  else{
+    return 'Soy falso';
+  }
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+  var resultado=0;
+  let array=[];
+  for(i=1;i<=60;i++){
+    resultado=i*6;
+    array[i]=resultado;
+    //array.push(resultado);
+  }
+  return array;
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  var contar=0;
+  parseInt(numero);
+  while(numero>=1){
+    contar=contar+1;
+    numero=numero/10;
+  }
+  if(contar===3){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var contador=0;
+  do{
+    numero = numero+5; 
+    contador = contador + 1;
+  }while(contador<8)
+  return numero;
 }
 
 
