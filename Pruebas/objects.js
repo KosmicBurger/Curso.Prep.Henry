@@ -45,16 +45,37 @@ var persona = {
  //MANERAS DE INVOCAR FUNCIÓN DEL OBJETO
  persona['hablar']('esta es otra manera de invocar una función de un método');
  persona.hablar('Kiubo gonorrea, tengo libres los');
+ var hacerAlgo = function(unObjeto,unaFuncion){
+  //ESTA ES UNA MANERA DE INVOCAR UNA FUNCIÓN DE UN OBJETO QUE VIENE DENTRO DE UN ARGUMENTO
+  unObjeto[unaFuncion]();
+  //////////////////////
+ }
  /////////////////////////
 
  for(let i=0; i<persona.agenda.length;i++){
   console.log(persona.agenda[i]);
  }
 
- var hacerAlgo = function(unObjeto,unaFuncion){
-  //ESTA ES UNA MANERA DE INVOCAR UNA FUNCIÓN DE UN OBJETO QUE VIENE DENTRO DE UN ARGUMENTO
-  unObjeto[unaFuncion]();
-  //////////////////////
- }
+//VERIFICAR SI UN OBJETO CONTIENE UNA PROPIEDAD EN ESPECÍFICO
+ console.log('La propiedad consultada existe dentro del objeto: '+persona.hasOwnProperty('edad'));
+/////////////////////////////////
+ 
+//RETORNA UN ARREGLO CON TODAS LAS PROPIEDADES DE UN OBJETO
+console.log(Object.keys(persona));
+////////////////////////////////////////////////////////
+
+
+var mundo = {
+  paises:500,
+  continentes:5,
+  oceanos:5,
+  personas:1234234,
+}
+//ASÍ SE RECORRE CADA PROPIEDAD DE UN MÉTODO
+for(let prop in mundo){
+  console.log('Este es el nombre de la propiedad: '+prop);
+  console.log('Y este es el valor de esa propiedad: '+mundo[prop]+'\n');
+}
+//////////////////////////////////////////////
 
  
